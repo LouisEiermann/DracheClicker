@@ -1,0 +1,15 @@
+.shop {
+  margin-top: 50px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.shop > h1 {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+}
+
+.shop > p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,39 @@
+.location {
+  margin-top: 50px;
+}
+
+.location > h1 {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+}
+
+.location > p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.mettLieferant img {
+  width: 106.5px;
+  height: 60px;
+}
+
+.mettLieferant h1 {
+  font-size: 1.1rem;
+}
+
+.mettLieferant p {
+  margin-bottom: .2rem;
+  font-size: 1.3rem;
+}
+
+.mettLieferant p:last-of-type {
+  font-size: .8rem;
+  margin-bottom: 4rem;
+}
+
+.mettLieferant button {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
