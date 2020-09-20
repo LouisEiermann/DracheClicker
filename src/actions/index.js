@@ -80,7 +80,7 @@ export const addRewe = (props) => {
       },
       {
         type: 'ADD_HAIDER_PRO_SEKUNDE',
-        payload: 20
+        payload: 25
       }
     ]
   } else {
@@ -107,7 +107,7 @@ export const addBurg = (props) => {
       },
       {
         type: 'ADD_HAIDER_PRO_SEKUNDE',
-        payload: 100
+        payload: 125
       }
     ]
   } else {
@@ -134,7 +134,7 @@ export const addSchanze = (props) => {
       },
       {
         type: 'ADD_HAIDER_PRO_SEKUNDE',
-        payload: 1000
+        payload: 625
       }
     ]
   } else {
@@ -161,7 +161,28 @@ export const addGrab = (props) => {
       },
       {
         type: 'ADD_HAIDER_PRO_SEKUNDE',
-        payload: 50000
+        payload: 3125
+      }
+    ]
+  } else {
+    return {
+      type: 'NO FUNDS'
+    }
+  }
+};
+
+// handling upgrades
+
+export const addPfadPower = (props) => {
+  if (props[1] >= props[0]) {
+    return [
+      {
+        type: 'SUBTRACT_HAIDER',
+        payload: props[0]
+      },
+      {
+        type: 'ADD_PFADPOWER',
+        payload: 1
       }
     ]
   } else {

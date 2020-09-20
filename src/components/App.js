@@ -7,16 +7,17 @@ import '../static/css/main.css';
 
 class App extends React.Component {
   render() {
+    document.title = "Drachenclicker"
     return (
       <div className="container">
         <div className="flexelement">
           <Progress />
         </div>
         <div className="flexelement">
-          <Buildings className="flexelement" />
+          <Buildings />
         </div>
         <div className="flexelement">
-          <Shop className="flexelement" />
+          <Shop />
         </div>
       </div>
     );

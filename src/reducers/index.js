@@ -12,6 +12,7 @@ import reweReducer from './rewe';
 import burgReducer from './burg';
 import schanzeReducer from './schanze';
 import grabReducer from './grab';
+import pfadPowerReducer from './pfadPower';
 import { combineReducers } from 'redux';
 
 const allReducers = combineReducers({
@@ -28,7 +29,8 @@ const allReducers = combineReducers({
   reweLevel: reweReducer,
   burgLevel: burgReducer,
   schanzeLevel: schanzeReducer,
-  grabLevel: grabReducer
+  grabLevel: grabReducer,
+  pfadPower: pfadPowerReducer
 });
 
 export default allReducers;

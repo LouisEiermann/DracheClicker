@@ -1,4 +1,4 @@
-const grabPriceReducer = (grabPrice = 500000, action) => {
+const grabPriceReducer = (grabPrice = 5000000, action) => {
   switch(action.type){
     case 'INCREASE_GRAB_PRICE':
       return grabPrice + action.payload;

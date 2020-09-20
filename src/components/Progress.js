@@ -13,66 +13,32 @@ class Progress extends React.Component {
     var burg = this.props.burgLevel;
     var schanze = this.props.schanzeLevel;
     var grab = this.props.grabLevel;
+    var pfadPower = this.props.pfadPower;
 
     // Check for upgrades of buildings
+
     if (prevProps.pfadLevel === pfad - 1) {
-      (function(delay, callback) {
-          pfad = prevProps.pfadLevel;
-          var loop = function(){
-              callback();
-              setTimeout(loop, delay);
-          }; loop();
-      })(1000, function(){store.dispatch(addHaider(1))});
+      setInterval(function(){store.dispatch(addHaider(1))}, 1000);
     }
 
     if (prevProps.herzLevel === herz - 1) {
-      (function(delay, callback) {
-          herz = prevProps.herzLevel;
-          var loop = function(){
-              callback();
-              setTimeout(loop, delay);
-          }; loop();
-      })(1000, function(){store.dispatch(addHaider(5))});
+      setInterval(function(){store.dispatch(addHaider(5))}, 1000);
     }
 
     if (prevProps.reweLevel === rewe - 1) {
-      (function(delay, callback) {
-          rewe = prevProps.reweLevel;
-          var loop = function(){
-              callback();
-              setTimeout(loop, delay);
-          }; loop();
-      })(1000, function(){store.dispatch(addHaider(20))});
+      setInterval(function(){store.dispatch(addHaider(25))}, 1000);
     }
 
     if (prevProps.burgLevel === burg - 1) {
-      (function(delay, callback) {
-          burg = prevProps.burgLevel;
-          var loop = function(){
-              callback();
-              setTimeout(loop, delay);
-          }; loop();
-      })(1000, function(){store.dispatch(addHaider(100))});
+      setInterval(function(){store.dispatch(addHaider(125))}, 1000);
     }
 
     if (prevProps.schanzeLevel === schanze - 1) {
-      (function(delay, callback) {
-          schanze = prevProps.schanzeLevel;
-          var loop = function(){
-              callback();
-              setTimeout(loop, delay);
-          }; loop();
-      })(1000, function(){store.dispatch(addHaider(1000))});
+      setInterval(function(){store.dispatch(addHaider(625))}, 1000);
     }
 
     if (prevProps.grabLevel === grab - 1) {
-      (function(delay, callback) {
-          grab = prevProps.grabLevel;
-          var loop = function(){
-              callback();
-              setTimeout(loop, delay);
-          }; loop();
-      })(1000, function(){store.dispatch(addHaider(50000))});
+      setInterval(function(){store.dispatch(addHaider(3125))}, 1000);
     }
   }
 
@@ -101,7 +67,8 @@ function mapStateToProps(state) {
     reweLevel: state.reweLevel,
     burgLevel: state.burgLevel,
     schanzeLevel: state.schanzeLevel,
-    grabLevel: state.grabLevel
+    grabLevel: state.grabLevel,
+    pfadPower: state.pfadPower
   }
 }
 

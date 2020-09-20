@@ -1,4 +1,4 @@
-const rewePriceReducer = (rewePrice = 2000, action) => {
+const rewePriceReducer = (rewePrice = 5000, action) => {
   switch(action.type){
     case 'INCREASE_REWE_PRICE':
       return rewePrice + action.payload;
