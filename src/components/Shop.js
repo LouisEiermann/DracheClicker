@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import '../static/css/shop.css';
 import frosch from '../static/img/frosch.jpg';
 import monster from '../static/img/monster.jpg';
-import ofenkäse from '../static/img/ofenkäse.jpg';
+import ofenkaese from '../static/img/ofenkäse.jpg';
 import honig from '../static/img/honig.jpg';
 import lkw from '../static/img/lkw.jpg';
 import pizzaschieber from '../static/img/pizzaschieber.jpg';
-import { addPfadPower } from '../actions'
+import { addItem } from '../actions'
 
 class Shop extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Shop extends React.Component {
     this.pizzaschieberItem = React.createRef();
     this.monsterItem = React.createRef();
     this.honigItem = React.createRef();
-    this.ofenkäseItem = React.createRef();
+    this.ofenkaeseItem = React.createRef();
     this.lkwItem = React.createRef();
   }
 
@@ -25,29 +25,29 @@ class Shop extends React.Component {
   componentDidUpdate() {
 
     // Check if upgrades need to be mounted
-    var haiders = this.props.haiders;
+    var haider = this.props.haider;
 
-    if (haiders > 0) {
+    if (haider > 0) {
       this.froschItem.current.style.display = "table-row";
     }
 
-    if (haiders > 100) {
+    if (haider > 100) {
       this.pizzaschieberItem.current.style.display = "table-row";
     }
 
-    if (haiders > 100) {
+    if (haider > 100) {
       this.monsterItem.current.style.display = "table-row";
     }
 
-    if (haiders > 100) {
+    if (haider > 100) {
       this.honigItem.current.style.display = "table-row";
     }
 
-    if (haiders > 100) {
-      this.ofenkäseItem.current.style.display = "table-row";
+    if (haider > 100) {
+      this.ofenkaeseItem.current.style.display = "table-row";
     }
 
-    if (haiders > 100) {
+    if (haider > 100) {
       this.lkwItem.current.style.display = "table-row";
     }
 
@@ -63,7 +63,7 @@ class Shop extends React.Component {
         <h1>Shop</h1>
         <p>Kaufe Upgrades, um Mettproduzenten effizienter zu machen!</p>
         <div className="items">
-          <div onClick={() => {this.props.dispatch(addPfadPower([10, this.props.haiders]))}} ref={this.froschItem} className="item" hidden>
+          <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.froschItem} className="item" hidden>
             <img src={frosch} alt={"ein frosch"}/>
             <hr/>
             <h1>a Frosch</h1>
@@ -72,7 +72,7 @@ class Shop extends React.Component {
             <hr/>
             <p>Drachenpfad produziert doppelt so viele Haider pro Level</p>
           </div>
-          <div ref={this.pizzaschieberItem} className="item" hidden>
+          <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.pizzaschieberItem} className="item" hidden>
             <img src={pizzaschieber} alt={"ein pizzaschieber"}/>
             <hr/>
             <h1>Ein Pizzaschieber</h1>
@@ -80,7 +80,7 @@ class Shop extends React.Component {
             <hr/>
             <p>Rotes Herz produziert doppelt so viele Haider pro Level</p>
           </div>
-          <div ref={this.monsterItem} className="item" hidden>
+          <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.monsterItem} className="item" hidden>
             <img src={monster} alt={"ein energy-drink"}/>
             <hr/>
             <h1>Enerdschi</h1>
@@ -88,7 +88,7 @@ class Shop extends React.Component {
             <hr/>
             <p>Rewe produziert doppelt so viele Haider pro Level</p>
           </div>
-          <div ref={this.honigItem} className="item" hidden>
+          <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.honigItem} className="item" hidden>
             <img src={honig} alt={"ein glas honig"}/>
             <hr/>
             <h1>Breitsamer Honig</h1>
@@ -96,15 +96,15 @@ class Shop extends React.Component {
             <hr/>
             <p>Rewe produziert dreimal so viele Haider pro Level</p>
           </div>
-          <div ref={this.ofenkäseItem} className="item" hidden>
-            <img src={ofenkäse} alt={"ein industrieprodukt"}/>
+          <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.ofenkaeseItem} className="item" hidden>
+            <img src={ofenkaese} alt={"ein industrieprodukt"}/>
             <hr/>
             <h1>Ofenkäse</h1>
             <p>Gesund für Oger</p>
             <hr/>
             <p>Rewe produziert viermal so viele Haider pro Level</p>
           </div>
-          <div ref={this.lkwItem} className="item" hidden>
+          <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.lkwItem} className="item" hidden>
             <img src={lkw} alt={"ein lastkraftwagen"}/>
             <hr/>
             <h1>gelibter LKW</h1>
@@ -120,8 +120,13 @@ class Shop extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    haiders: state.haiders,
-    pfadPower: state.pfadPower
+    haider: state.haider,
+    pfadPower: state.pfadPower,
+    herzPower: state.herzPower,
+    rewePower: state.rewePower,
+    burgPower: state.burgPower,
+    schanzePower: state.schanzePower,
+    grabPower: state.grabPower
   }
 }
 

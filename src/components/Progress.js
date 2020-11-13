@@ -7,14 +7,14 @@ import { store } from '../index';
 
 class Progress extends React.Component {
   componentDidMount(prevProps, prevState) {
-    setInterval(function(){store.dispatch(tick())}, 1000);
+    setInterval(function(){store.dispatch(tick())}, 1/60 * 1000);
   }
 
   render() {
     return (
       <div>
         <div className="progress">
-          <h1 className="haiders-total">Haider: {this.props.haider}</h1>
+          <h1 className="haiders-total">Haider: {this.props.haider.toFixed(0)}</h1>
           <h2 className="haiders-ps">{this.props.haiderProSekunde} neue Haider pro Sekunde</h2>
         </div>
         <div className="schanze">

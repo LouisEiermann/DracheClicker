@@ -33,6 +33,25 @@ export const addLocation = (props) => {
   }
 };
 
+// handling upgrades
+export const addItem = (props) => {
+  if (props['haider'] >= props['price']) {
+    return [
+      {
+        type: 'ADD_ITEM',
+        payload: {
+          type: props['type'],
+          price: props['price'],
+        }
+      }
+    ]
+  } else {
+    return {
+      type: 'NO FUNDS'
+    }
+  }
+};
+
 export const subtractLocation = (props) => {
   if (props['haiders'] >= props['price']) {
     return [
@@ -51,26 +70,6 @@ export const subtractLocation = (props) => {
       {
         type: 'ADD_HAIDER_PRO_SEKUNDE',
         payload: props['haidersprosekunde']
-      }
-    ]
-  } else {
-    return {
-      type: 'NO FUNDS'
-    }
-  }
-};
-// handling upgrades
-
-export const addPfadPower = (props) => {
-  if (props[1] >= props[0]) {
-    return [
-      {
-        type: 'SUBTRACT_HAIDER',
-        payload: props[0]
-      },
-      {
-        type: 'ADD_PFADPOWER',
-        payload: 1
       }
     ]
   } else {
