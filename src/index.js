@@ -4,7 +4,7 @@ import App from './components/App';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import multi from 'redux-multi';
-import allReducers from './reducers';
+import reducer from './reducers';
 import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -13,7 +13,7 @@ const composeEnhancers = composeWithDevTools({
 });
 
 export const store = createStore(
-  allReducers,
+  reducer,
   composeEnhancers(
   applyMiddleware(multi, thunk)
   )

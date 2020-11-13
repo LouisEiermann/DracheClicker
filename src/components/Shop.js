@@ -64,7 +64,7 @@ class Shop extends React.Component {
         <p>Kaufe Upgrades, um Mettproduzenten effizienter zu machen!</p>
         <div className="items">
           <div onClick={() => {this.props.dispatch(addPfadPower([10, this.props.haiders]))}} ref={this.froschItem} className="item" hidden>
-            <img src={frosch}/>
+            <img src={frosch} alt={"ein frosch"}/>
             <hr/>
             <h1>a Frosch</h1>
             <p>10 Haider</p>
@@ -73,7 +73,7 @@ class Shop extends React.Component {
             <p>Drachenpfad produziert doppelt so viele Haider pro Level</p>
           </div>
           <div ref={this.pizzaschieberItem} className="item" hidden>
-            <img src={pizzaschieber}/>
+            <img src={pizzaschieber} alt={"ein pizzaschieber"}/>
             <hr/>
             <h1>Ein Pizzaschieber</h1>
             <p>Geeignet für Haider-Kaschper</p>
@@ -81,7 +81,7 @@ class Shop extends React.Component {
             <p>Rotes Herz produziert doppelt so viele Haider pro Level</p>
           </div>
           <div ref={this.monsterItem} className="item" hidden>
-            <img src={monster}/>
+            <img src={monster} alt={"ein energy-drink"}/>
             <hr/>
             <h1>Enerdschi</h1>
             <p>Das beste beim Streamen</p>
@@ -89,7 +89,7 @@ class Shop extends React.Component {
             <p>Rewe produziert doppelt so viele Haider pro Level</p>
           </div>
           <div ref={this.honigItem} className="item" hidden>
-            <img src={honig}/>
+            <img src={honig} alt={"ein glas honig"}/>
             <hr/>
             <h1>Breitsamer Honig</h1>
             <p>Der "helle Harte", erhöht vielleicht den IQ des Konsumenten</p>
@@ -97,7 +97,7 @@ class Shop extends React.Component {
             <p>Rewe produziert dreimal so viele Haider pro Level</p>
           </div>
           <div ref={this.ofenkäseItem} className="item" hidden>
-            <img src={ofenkäse}/>
+            <img src={ofenkäse} alt={"ein industrieprodukt"}/>
             <hr/>
             <h1>Ofenkäse</h1>
             <p>Gesund für Oger</p>
@@ -105,7 +105,7 @@ class Shop extends React.Component {
             <p>Rewe produziert viermal so viele Haider pro Level</p>
           </div>
           <div ref={this.lkwItem} className="item" hidden>
-            <img src={lkw}/>
+            <img src={lkw} alt={"ein lastkraftwagen"}/>
             <hr/>
             <h1>gelibter LKW</h1>
             <p>Vom Besitzer sehr gelibt</p>

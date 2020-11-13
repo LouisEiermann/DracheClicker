@@ -12,46 +12,45 @@ import schauerberg from '../static/audio/schauerberg.mp3';
 import ruhe from '../static/audio/ruhe.mp3';
 import tod from '../static/audio/tod.mp3';
 import '../static/css/buildings.css';
-import { addPfad, addHerz, addRewe, addBurg, addSchanze, addGrab } from '../actions'
+import { addLocation } from '../actions'
 import { connect } from 'react-redux';
 
 class Locations extends React.Component {
 
-  // check if location is bought or leveled and play soundfile
   componentDidUpdate(prevProps, prevState) {
-    var pfad = this.props.pfadLevel;
-    var herz = this.props.herzLevel;
-    var rewe = this.props.reweLevel;
-    var burg = this.props.burgLevel;
-    var schanze = this.props.schanzeLevel;
-    var grab = this.props.grabLevel;
+    let pfadLevel = this.props.pfadLevel;
+    let herzLevel = this.props.herzLevel;
+    let reweLevel = this.props.reweLevel;
+    let burgLevel = this.props.burgLevel;
+    let schanzeLevel = this.props.schanzeLevel;
+    let grabLevel = this.props.grabLevel;
 
-    if (prevProps.pfadLevel === pfad - 1) {
+    if (prevProps.pfadLevel === pfadLevel - 1) {
       const pfadAudio = document.getElementsByClassName("pfad-audio-element")[0]
       pfadAudio.play()
     }
 
-    if (prevProps.herzLevel === herz - 1) {
+    if (prevProps.herzLevel === herzLevel - 1) {
       const herzAudio = document.getElementsByClassName("herz-audio-element")[0]
       herzAudio.play()
     }
 
-    if (prevProps.reweLevel === rewe - 1) {
+    if (prevProps.reweLevel === reweLevel - 1) {
       const reweAudio = document.getElementsByClassName("rewe-audio-element")[0]
       reweAudio.play()
     }
 
-    if (prevProps.burgLevel === burg - 1) {
+    if (prevProps.burgLevel === burgLevel - 1) {
       const burgAudio = document.getElementsByClassName("burg-audio-element")[0]
       burgAudio.play()
     }
 
-    if (prevProps.schanzeLevel === schanze - 1) {
+    if (prevProps.schanzeLevel === schanzeLevel - 1) {
       const schanzeAudio = document.getElementsByClassName("schanze-audio-element")[0]
       schanzeAudio.play()
     }
 
-    if (prevProps.grabLevel === grab - 1) {
+    if (prevProps.grabLevel === grabLevel - 1) {
       const grabAudio = document.getElementsByClassName("grab-audio-element")[0]
       grabAudio.play()
     }
@@ -70,7 +69,7 @@ class Locations extends React.Component {
             </audio>
             <img src={pfad} alt="pilgerpfad" />
             <h1>Pilgerpfad (produziert 1 Haider pro Sekunde)</h1>
-            <button onClick={() => {this.props.dispatch(addPfad([this.props.pfadPrice, this.props.haiders]))}} >Kaufen ({this.props.pfadPrice} Haider)</button>
+            <button onClick={() => {this.props.dispatch(addLocation({type: 'pfad', price: this.props.pfadPrice, haider: this.props.haider, haiderProSekunde: 1}))}} >Kaufen ({this.props.pfadPrice} Haider)</button>
             <p>Level: {this.props.pfadLevel}</p>
             <p>generiert aktuell {this.props.pfadLevel} Haider pro Sekunde</p>
           </div>
@@ -80,7 +79,7 @@ class Locations extends React.Component {
             </audio>
             <img src={herz} alt="rotes Herz" />
             <h1>Rotes Herz (produziert 5 Haider pro Sekunde)</h1>
-            <button onClick={() => {this.props.dispatch(addHerz([this.props.herzPrice, this.props.haiders]))}} >Kaufen ({this.props.herzPrice} Haider)</button>
+            <button onClick={() => {this.props.dispatch(addLocation({type: 'herz', price: this.props.herzPrice, haider: this.props.haider, haiderProSekunde: 5}))}} >Kaufen ({this.props.herzPrice} Haider)</button>
             <p>Level: {this.props.herzLevel}</p>
             <p>generiert aktuell {this.props.herzLevel * 5} Haider pro Sekunde</p>
           </div>
@@ -90,7 +89,7 @@ class Locations extends React.Component {
             </audio>
             <img src={rewe} alt="Rewe" />
             <h1>Rewe (produziert 25 Haider pro Sekunde)</h1>
-            <button onClick={() => {this.props.dispatch(addRewe([this.props.rewePrice, this.props.haiders]))}} >Kaufen ({this.props.rewePrice} Haider)</button>
+            <button onClick={() => {this.props.dispatch(addLocation({type: 'rewe', price: this.props.rewePrice, haider: this.props.haider, haiderProSekunde: 25}))}} >Kaufen ({this.props.rewePrice} Haider)</button>
             <p>Level: {this.props.reweLevel}</p>
             <p>generiert aktuell {this.props.reweLevel * 25} Haider pro Sekunde</p>
           </div>
@@ -100,7 +99,7 @@ class Locations extends React.Component {
             </audio>
             <img src={ruine} alt="Burg Eppelein" />
             <h1>Burg Eppelein (produziert 125 Haider pro Sekunde)</h1>
-            <button onClick={() => {this.props.dispatch(addBurg([this.props.burgPrice, this.props.haiders]))}} >Kaufen ({this.props.burgPrice} Haider)</button>
+            <button onClick={() => {this.props.dispatch(addLocation({type: 'burg', price: this.props.burgPrice, haider: this.props.haider, haiderProSekunde: 125}))}} >Kaufen ({this.props.burgPrice} Haider)</button>
             <p>Level: {this.props.burgLevel}</p>
             <p>generiert aktuell {this.props.burgLevel * 125} Haider pro Sekunde</p>
           </div>
@@ -110,7 +109,7 @@ class Locations extends React.Component {
             </audio>
             <img src={schanze} alt="Drachenschanze" />
             <h1>Drachenschanze (produziert 625 Haider pro Sekunde)</h1>
-            <button onClick={() => {this.props.dispatch(addSchanze([this.props.schanzePrice, this.props.haiders]))}} >Kaufen ({this.props.schanzePrice} Haider)</button>
+            <button onClick={() => {this.props.dispatch(addLocation({type: 'schanze', price: this.props.schanzePrice, haider: this.props.haider, haiderProSekunde: 625}))}} >Kaufen ({this.props.schanzePrice} Haider)</button>
             <p>Level: {this.props.schanzeLevel}</p>
             <p>generiert aktuell {this.props.schanzeLevel * 625} Haider pro Sekunde</p>
           </div>
@@ -120,7 +119,7 @@ class Locations extends React.Component {
             </audio>
             <img src={grab} alt="Grab von Rudi" />
             <h1>Rudi's Grab (produziert 3125 Haider pro Sekunde)</h1>
-            <button onClick={() => {this.props.dispatch(addGrab([this.props.grabPrice, this.props.haiders]))}} >Kaufen ({this.props.grabPrice} Haider)</button>
+            <button onClick={() => {this.props.dispatch(addLocation({type: 'grab', price: this.props.grabPrice, haider: this.props.haider, haiderProSekunde: 3125}))}}>Kaufen ({this.props.grabPrice} Haider)</button>
             <p>Level: {this.props.grabLevel}</p>
             <p>generiert aktuell {this.props.grabLevel * 3125} Haider pro Sekunde</p>
           </div>
@@ -132,19 +131,19 @@ class Locations extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    haiders: state.haiders,
-    pfadPrice: state.pfadPrice,
-    herzPrice: state.herzPrice,
-    rewePrice: state.rewePrice,
-    burgPrice: state.burgPrice,
-    schanzePrice: state.schanzePrice,
-    grabPrice: state.grabPrice,
-    pfadLevel: state.pfadLevel,
-    herzLevel: state.herzLevel,
-    reweLevel: state.reweLevel,
-    burgLevel: state.burgLevel,
-    schanzeLevel: state.schanzeLevel,
-    grabLevel: state.grabLevel
+    haider: state['haider'],
+    pfadPrice: state['pfadPrice'],
+    herzPrice: state['herzPrice'],
+    rewePrice: state['rewePrice'],
+    burgPrice: state['burgPrice'],
+    schanzePrice: state['schanzePrice'],
+    grabPrice: state['grabPrice'],
+    pfadLevel: state['pfadLevel'],
+    herzLevel: state['herzLevel'],
+    reweLevel: state['reweLevel'],
+    burgLevel: state['burgLevel'],
+    schanzeLevel: state['schanzeLevel'],
+    grabLevel: state['grabLevel']
   }
 }
 
