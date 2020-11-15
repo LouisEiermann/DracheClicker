@@ -9,12 +9,12 @@ const initialState = {
   schanzeLevel: 0,
   grabLevel: 0,
 
-  pfadPrice: 10,
-  herzPrice: 10,
-  rewePrice: 10,
-  burgPrice: 10,
-  schanzePrice: 10,
-  grabPrice: 10,
+  pfadPrice: 50,
+  herzPrice: 500,
+  rewePrice: 5000,
+  burgPrice: 50000,
+  schanzePrice: 500000,
+  grabPrice: 5000000,
 
   pfadPower: 1,
   herzPower: 1,

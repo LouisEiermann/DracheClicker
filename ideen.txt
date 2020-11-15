@@ -1,0 +1,28 @@
+items:
+    - löschzwerge
+    - wahlomat
+    - Basketballplatz
+
+
+achievements:
+    - Schanzenfest: Sammle 500 Haider
+    - Level 100 Haider: Sammle 100.000.000 Haider
+    - Echter Emskirchener: Spiele 1 Stunde
+
+Haid-Quellen
+    - Younow-Stream
+    - Lp-Kanal
+    - Restreamer
+
+Glücksrad:
+    -Haid Events(zb. Mettwoch, Feuerwehr), geben einmalig Haider
+
+Anti-Haid:
+    -Onkel Alfred
+    -Polizeiinspektion NEA
+    -Fans
+
+Hintergrundmusik
+    -Lülülü
+
+

@@ -5,6 +5,7 @@ import frosch from '../static/img/frosch.jpg';
 import monster from '../static/img/monster.jpg';
 import ofenkaese from '../static/img/ofenkäse.jpg';
 import honig from '../static/img/honig.jpg';
+import loeschzwerg from '../static/img/loeschzwerg.jpg';
 import lkw from '../static/img/lkw.jpg';
 import pizzaschieber from '../static/img/pizzaschieber.jpg';
 import { addItem } from '../actions'
@@ -18,6 +19,7 @@ class Shop extends React.Component {
     this.monsterItem = React.createRef();
     this.honigItem = React.createRef();
     this.ofenkaeseItem = React.createRef();
+    this.loeschzwergItem = React.createRef();
     this.lkwItem = React.createRef();
   }
 
@@ -25,35 +27,57 @@ class Shop extends React.Component {
   componentDidUpdate() {
 
     // Check if upgrades need to be mounted
-    var haider = this.props.haider;
-
-    if (haider > 0) {
+    if (this.props.haider > 0) {
       this.froschItem.current.style.display = "table-row";
     }
 
-    if (haider > 100) {
+    if (this.props.haider > 1000) {
       this.pizzaschieberItem.current.style.display = "table-row";
     }
 
-    if (haider > 100) {
+    if (this.props.haider > 100) {
       this.monsterItem.current.style.display = "table-row";
     }
 
-    if (haider > 100) {
+    if (this.props.haider > 100) {
       this.honigItem.current.style.display = "table-row";
     }
 
-    if (haider > 100) {
+    if (this.props.haider > 100) {
       this.ofenkaeseItem.current.style.display = "table-row";
     }
 
-    if (haider > 100) {
+    if (this.props.haider > 100) {
+      this.loeschzwergItem.current.style.display = "table-row";
+    }
+
+    if (this.props.haider > 100) {
       this.lkwItem.current.style.display = "table-row";
     }
 
     // Check if upgrades need to be unmounted
     if (this.props.pfadPower > 1) {
       this.froschItem.current.style.display = "none";
+    }
+
+    if (this.props.herzPower > 1) {
+      this.pizzaschieberItem.current.style.display = "none";
+    }
+
+    if (this.props.rewePower > 1) {
+      this.monsterItem.current.style.display = "none";
+    }
+
+    if (this.props.rewePower > 1) {
+      this.honigItem.current.style.display = "none";
+    }
+
+    if (this.props.rewePower > 1) {
+      this.ofenkaeseItem.current.style.display = "none";
+    }
+
+    if (this.props.grabPower > 1) {
+      this.lkwItem.current.style.display = "none";
     }
   }
 
@@ -103,6 +127,14 @@ class Shop extends React.Component {
             <p>Gesund für Oger</p>
             <hr/>
             <p>Rewe produziert viermal so viele Haider pro Level</p>
+          </div>
+          <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.loeschzwergItem} className="item" hidden>
+            <img src={loeschzwerg} alt={"ein freches bier"}/>
+            <hr/>
+            <h1>Löschzwerg</h1>
+            <p>Löscht Haiderdurst effektiv</p>
+            <hr/>
+            <p>Rewe produziert achtmal so viele Haider pro Level</p>
           </div>
           <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.lkwItem} className="item" hidden>
             <img src={lkw} alt={"ein lastkraftwagen"}/>
