@@ -32,6 +32,28 @@ const reducer = (state = initialState, action) => {
       newState['haider'] = haider;
       newState['haiderProSekunde'] = (state.pfadLevel * state.pfadPower) + (state.herzLevel * state.herzPower * 5) + (state.reweLevel * state.rewePower * 25) + (state.burgLevel * state.burgPower * 125) + (state.schanzeLevel * state.schanzePower * 625) + (state.grabLevel * state.grabPower * 3125);
       return newState
+    case 'RESET_PROGRESS':
+      newState['haider'] = 0;
+      newState['haiderProSekunde'] = 0;
+      newState['pfadLevel'] = 0;
+      newState['herzLevel'] = 0;
+      newState['reweLevel'] = 0;
+      newState['burgLevel'] = 0;
+      newState['schanzeLevel'] = 0;
+      newState['grabLevel'] = 0;
+      newState['pfadPrice'] = 50;
+      newState['herzPrice'] = 500;
+      newState['rewePrice'] = 5000;
+      newState['burgPrice'] = 50000;
+      newState['schanzePrice'] = 500000;
+      newState['grabPrice'] = 5000000;
+      newState['pfadPower'] = 1;
+      newState['herzPower'] = 1;
+      newState['rewePower'] = 1;
+      newState['burgPower'] = 1;
+      newState['schanzePower'] = 1;
+      newState['grabPower'] = 1;
+      return newState
     case 'ADD_HAIDER':
       newState['haider'] += 1;
       return newState;

@@ -6,6 +6,14 @@ export const tick = () => {
   ]
 };
 
+export const resetProgress = () => {
+  return [
+    {
+      type: 'RESET_PROGRESS'
+    }
+  ]
+};
+
 export const addHaider = (props) => {
   return [
     {
