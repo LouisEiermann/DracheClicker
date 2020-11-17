@@ -1,7 +1,7 @@
 items:
-    - löschzwerge
     - wahlomat
     - Basketballplatz
+
 
 
 achievements:
@@ -14,8 +14,9 @@ Haid-Quellen
     - Lp-Kanal
     - Restreamer
 
+
 Glücksrad:
-    -Haid Events(zb. Mettwoch, Feuerwehr), geben einmalig Haider
+    -Haid Events(zb. Mettwoch, Feuerwehr, Rudi Ausbuddlung), geben einmalig Haider
 
 Anti-Haid:
     -Onkel Alfred
@@ -25,4 +26,12 @@ Anti-Haid:
 Hintergrundmusik
     -Lülülü
 
+
+
+ Graphic bug fix pls
+ fix pls items
+ price fix pls
+ fix weird movement
+ balance pls
+ shop make closer ty
 

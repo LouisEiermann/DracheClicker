@@ -8,6 +8,8 @@ import honig from '../static/img/honig.jpg';
 import loeschzwerg from '../static/img/loeschzwerg.jpg';
 import lkw from '../static/img/lkw.jpg';
 import pizzaschieber from '../static/img/pizzaschieber.jpg';
+import pizza from '../static/img/pizza.jpg';
+import luger from '../static/img/luger.jpg';
 import { addItem } from '../actions'
 
 class Shop extends React.Component {
@@ -16,23 +18,29 @@ class Shop extends React.Component {
 
     this.froschItem = React.createRef();
     this.pizzaschieberItem = React.createRef();
+    this.pizzaItem = React.createRef();
     this.monsterItem = React.createRef();
     this.honigItem = React.createRef();
     this.ofenkaeseItem = React.createRef();
     this.loeschzwergItem = React.createRef();
     this.lkwItem = React.createRef();
+    this.lugerItem = React.createRef();
   }
 
   // Check if upgrades need to be mounted or unmounted after purchase
   componentDidUpdate() {
 
     // Check if upgrades need to be mounted
-    if (this.props.haider > 0) {
+    if (this.props.haider > 500) {
       this.froschItem.current.style.display = "table-row";
     }
 
-    if (this.props.haider > 1000) {
+    if (this.props.haider > 5000) {
       this.pizzaschieberItem.current.style.display = "table-row";
+    }
+
+    if (this.props.haider > 100) {
+      this.pizzaItem.current.style.display = "table-row";
     }
 
     if (this.props.haider > 100) {
@@ -53,6 +61,10 @@ class Shop extends React.Component {
 
     if (this.props.haider > 100) {
       this.lkwItem.current.style.display = "table-row";
+    }
+
+    if (this.props.haider > 100) {
+      this.lugerItem.current.style.display = "table-row";
     }
 
     // Check if upgrades need to be unmounted
@@ -104,6 +116,14 @@ class Shop extends React.Component {
             <hr/>
             <p>Rotes Herz produziert doppelt so viele Haider pro Level</p>
           </div>
+          <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.pizzaItem} className="item" hidden>
+            <img src={pizza} alt={"eine vegetarische pizza"}/>
+            <hr/>
+            <h1>Vegetarische Pizza</h1>
+            <p>Spezialität im Roten Herz</p>
+            <hr/>
+            <p>Rotes Herz produziert dreimal so viele Haider pro Level</p>
+          </div>
           <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.monsterItem} className="item" hidden>
             <img src={monster} alt={"ein energy-drink"}/>
             <hr/>
@@ -143,6 +163,14 @@ class Shop extends React.Component {
             <p>Vom Besitzer sehr gelibt</p>
             <hr/>
             <p>Rudis Grab produziert doppelt so viele Haider pro Level</p>
+          </div>
+          <div onClick={() => {this.props.dispatch(addItem({type: 'pfad', price: 10, haider: this.props.haider}))}} ref={this.lugerItem} className="item" hidden>
+            <img src={luger} alt={"die goldene luger"}/>
+            <hr/>
+            <h1>Rudis goldene Luger</h1>
+            <p>Ehrenauszeichnung aus dem 2 Weltkrieg</p>
+            <hr/>
+            <p>Rudis Grab produziert hundertmal so viele Haider pro Level</p>
           </div>
         </div>
       </div>

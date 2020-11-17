@@ -1,6 +1,7 @@
 const initialState = {
   haider: 0,
   haiderProSekunde: 0,
+  audio: true,
 
   pfadLevel: 0,
   herzLevel: 0,
@@ -56,6 +57,12 @@ const reducer = (state = initialState, action) => {
       return newState
     case 'ADD_HAIDER':
       newState['haider'] += 1;
+      return newState;
+    case 'SWITCH_AUDIO':
+      if (state['audio'] === true){
+        newState['audio'] = false;
+      }
+      else newState['audio'] = true;
       return newState;
     case 'ADD_LOCATION':
       newState[action.payload.type + "Level"] += 1;

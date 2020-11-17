@@ -14,6 +14,14 @@ export const resetProgress = () => {
   ]
 };
 
+export const switchAudio = () => {
+  return [
+    {
+      type: 'SWITCH_AUDIO'
+    }
+  ]
+};
+
 export const addHaider = (props) => {
   return [
     {
