@@ -59,10 +59,7 @@ const reducer = (state = initialState, action) => {
       newState['haider'] += 1;
       return newState;
     case 'SWITCH_AUDIO':
-      if (state['audio'] === true){
-        newState['audio'] = false;
-      }
-      else newState['audio'] = true;
+      newState['audio'] = state['audio'] !== true;
       return newState;
     case 'ADD_LOCATION':
       newState[action.payload.type + "Level"] += 1;
@@ -73,7 +70,7 @@ const reducer = (state = initialState, action) => {
       newState[action.payload.type] -= 1;
       return newState;
     case 'ADD_ITEM':
-      newState[action.payload.type + "Power"] += 1;
+      newState[action.payload.type + "Power"] += action.payload.power;
       newState['haider'] -= action.payload.price;
       return newState;
     default:

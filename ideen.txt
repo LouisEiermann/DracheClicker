@@ -15,7 +15,7 @@ Haid-Quellen
     - Restreamer
 
 
-Glücksrad:
+Events RNG:
     -Haid Events(zb. Mettwoch, Feuerwehr, Rudi Ausbuddlung), geben einmalig Haider
 
 Anti-Haid:
@@ -29,7 +29,6 @@ Hintergrundmusik
 
 
  Graphic bug fix pls
- fix pls items
  price fix pls
  fix weird movement
  balance pls

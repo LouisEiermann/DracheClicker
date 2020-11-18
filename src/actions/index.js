@@ -58,6 +58,7 @@ export const addItem = (props) => {
         payload: {
           type: props['type'],
           price: props['price'],
+          power: props['power']
         }
       }
     ]
