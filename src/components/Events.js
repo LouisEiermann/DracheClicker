@@ -12,8 +12,10 @@ class Events extends React.Component {
                     <button onClick={() => this.props.dispatch(triggerEvent({timer: this.props.timer}))}>Event auslösen
                     </button>
                 </div>
-                <div>
-                    <img src={this.props.currentEvent.eventImage}/>
+                <div className="event">
+                    <img src={this.props.currentEvent.eventImage} alt="Noch kein Event"/>
+                    <hr/>
+                    <p>{this.props.currentEvent.eventDescription}</p>
                     <h1>{this.props.currentEvent.eventName}</h1>
                     <p>{this.props.currentEvent.eventText}</p>
                 </div>

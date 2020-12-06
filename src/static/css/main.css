@@ -81,6 +81,7 @@ button {
 .mettLieferant img {
   width: 106.5px;
   height: 60px;
+  border-radius: 1rem;
 }
 
 .mettLieferant h1 {
@@ -153,4 +154,32 @@ button {
 
 .item hr ~ p {
   margin-bottom: 1rem;
+}
+
+.event {
+  margin-top: 1rem;
+  border: .15rem solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.event hr {
+  margin-left: 10px;
+  width: 0;
+  height: 90px;
+  display: inline-block;
+  color: #FFF;
+}
+
+.event p:first-of-type {
+  display: inline-block;
+  margin-left: 30px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.event img {
+  height: 90px;
+  width: 120px;
+  border-radius: 1rem;
 }

@@ -36,9 +36,9 @@ const initialState = {
 const reducer = (state = initialState, action) => {
 
     let events = [
-        {eventName: 'Schanzenfest', eventText: 'Wir sehen uns am 20. August', eventImage: schanzenfest},
-        {eventName: 'Stream auf Younow', eventText: 'Ist irgendein Moderator da?', eventImage: younow},
-        {eventName: 'Feuerwehr gerufen', eventText: 'DIE SCHANZE BRENNT', eventImage: feuerwehr},
+        {eventName: 'Schanzenfest', eventText: ' "20. August, Rainer!" ', eventDescription: 'Schanzenfest: +500 Haider', eventImage: schanzenfest},
+        {eventName: 'Stream auf Younow', eventText: ' "Ist irgendein Moderator da?" ', eventDescription: 'Der Lord streamt: 10 Haider pro Sekunde für drei Stunden', eventImage: younow},
+        {eventName: 'Feuerwehr gerufen', eventText: ' "Die Schanze brennt!" .. Oder doch nicht? ', eventDescription: 'Jemand rief die Feuerwehr: Die Schanze produziert für 30 Minuten doppelt soviele Haider', eventImage: feuerwehr},
     ]
 
     const newState = {...state};
@@ -61,6 +61,7 @@ const reducer = (state = initialState, action) => {
             newState['haider'] = 0;
             newState['haiderProSekunde'] = 0;
             newState['timer'] = 1;
+            newState['music'] = false;
             newState['currentEvent'] = {};
             newState['pfadLevel'] = 0;
             newState['herzLevel'] = 0;
