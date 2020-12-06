@@ -2,11 +2,184 @@
   margin: 0;
   font-size: 16px;
   font-family: sans-serif;
+  box-sizing: border-box;
 }
 
 /* color scheme
 
 #2a9e33;
 #00aae7;
+#1dcc28
 
 */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flexelement {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+button {
+  color: #40f74c;
+  background: #00aae7;
+  border: 50px #000;
+  border-radius: 5px;
+}
+
+.settings_button {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+}
+
+.schanze p {
+  font-size: 1.3rem;
+}
+
+.schanze img {
+  cursor: pointer;
+  margin-top: .5rem;
+}
+
+.haiders-total {
+  font-size: 4rem;
+}
+
+.haiders-ps {
+  font-size: 1rem;
+}
+
+.location {
+  margin-top: 50px;
+}
+
+.location > h1 {
+  font-size: 2rem;
+  margin-bottom: .8rem;
+}
+
+.location > p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.mettLieferant img {
+  width: 106.5px;
+  height: 60px;
+  border-radius: 1rem;
+}
+
+.mettLieferant h1 {
+  font-size: 1.1rem;
+}
+
+.mettLieferant p {
+  margin-bottom: .2rem;
+  font-size: 1.3rem;
+}
+
+.mettLieferant p:last-of-type {
+  font-size: .8rem;
+  margin-bottom: 4rem;
+}
+
+.mettLieferant button {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.shop {
+  margin-top: 50px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.shop img {
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  height: 10rem;
+  width: 10rem;
+}
+
+.shop hr {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.shop > h1 {
+  font-size: 2rem;
+  margin-bottom: .7rem;
+}
+
+.shop > p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.item {
+  border: .1rem solid #000;
+  margin: 1rem;
+  height: 22rem;
+  width: 15rem;
+  cursor: pointer;
+}
+
+.item h1 {
+  font-size: 1.5rem;
+  margin-bottom: .4rem;
+}
+
+.item p {
+  font-size: .9rem;
+  font-style: italic;
+}
+
+.item hr ~ p {
+  margin-bottom: 1rem;
+}
+
+.event {
+  margin-top: 1rem;
+  border: .15rem solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.event hr {
+  margin-left: 10px;
+  width: 0;
+  height: 90px;
+  display: inline-block;
+  color: #FFF;
+}
+
+.event p:first-of-type {
+  display: inline-block;
+  margin-left: 30px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.event img {
+  height: 90px;
+  width: 120px;
+  border-radius: 1rem;
+}
